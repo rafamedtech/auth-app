@@ -4,11 +4,11 @@ const user = useSupabaseUser();
 const userLogout = async () => {
   await auth.signOut();
 };
-watchEffect(() => {
-  if (!user.value) {
-    return navigateTo('/login');
-  }
-});
+// watchEffect(() => {
+//   if (!user.value) {
+//     return navigateTo('/login');
+//   }
+// });
 definePageMeta({
   middleware: 'auth',
 });
