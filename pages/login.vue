@@ -3,10 +3,10 @@ const user = useSupabaseUser();
 const email = ref('');
 const password = ref('');
 const errorMsg = ref('');
-const { auth } = useSupabaseClient();
+const { auth } = useSupabaseAuthClient();
 const userLogin = async () => {
   try {
-    const { error } = await auth.signIn({
+    const { error } = await auth.signInWithPassword({
       email: email.value,
       password: password.value,
     });
